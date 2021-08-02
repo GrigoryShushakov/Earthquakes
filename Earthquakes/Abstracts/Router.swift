@@ -1,0 +1,3 @@
+protocol Router {
+    func run()
+}
