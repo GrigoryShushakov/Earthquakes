@@ -35,6 +35,7 @@ final class EarthquakeTableViewCell: UITableViewCell {
             dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Layout.spacing),
         ])
         separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        selectionStyle = .none
         idLabel.font = Font.headline
         magnitudeLabel.font = Font.body
         dateLabel.font = Font.caption

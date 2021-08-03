@@ -4,7 +4,7 @@ import Foundation
 enum ListViewModelState {
     case loading
     case finished
-    case error(Error)
+    case error(NetworkError)
 }
 
 final class ListViewModel: EarthquakeService {

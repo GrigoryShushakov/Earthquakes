@@ -80,7 +80,7 @@ final class ListViewController: BaseViewController<ListViewModel> {
         })
     }
     
-    private func showError(_ error: Error) {
+    private func showError(_ error: NetworkError) {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
             self.dismiss(animated: true, completion: nil)
