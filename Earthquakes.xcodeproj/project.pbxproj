@@ -83,6 +83,7 @@
 		D16D568926B88EF0004B33B6 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		D16D568B26B93992004B33B6 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		D16D568D26B945DD004B33B6 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
+		D16D569026C1E6A4004B33B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 		D16D560A26B5ED4E004B33B6 = {
 			isa = PBXGroup;
 			children = (
+				D16D569026C1E6A4004B33B6 /* README.md */,
 				D16D561526B5ED4E004B33B6 /* Earthquakes */,
 				D16D562C26B5ED52004B33B6 /* EarthquakesTests */,
 				D16D561426B5ED4E004B33B6 /* Products */,

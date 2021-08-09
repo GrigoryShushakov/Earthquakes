@@ -7,6 +7,7 @@ struct NetworkSession: NetworkService {
         
         return URLSession.shared
             .dataTaskPublisher(for: builder.urlRequest)
+            .subscribe(on: DispatchQueue.global(qos: .userInitiated))
             .receive(on: DispatchQueue.main)
             .mapError { error in .urlError(reason: error.localizedDescription) }
             .flatMap { data, response -> AnyPublisher<T, NetworkError> in

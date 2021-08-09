@@ -2,18 +2,14 @@ import UIKit
 import Combine
 import CombineCocoa
 
-final class ListViewController: BaseViewController<ListViewModel> {
+final class ListViewController: BaseViewController<ListViewModel, ListView> {
     var router: ListRouter?
-    private let contentView = ListView()
     private var cancellables = Set<AnyCancellable>()
     
     private typealias DataSource = UITableViewDiffableDataSource<ListViewModel.Section, Earthquake>
     private typealias Snapshot = NSDiffableDataSourceSnapshot<ListViewModel.Section, Earthquake>
     private var dataSource: DataSource!
     
-    override func loadView() {
-        view = contentView
-    }
     override func configure() {
         super.configure()
         

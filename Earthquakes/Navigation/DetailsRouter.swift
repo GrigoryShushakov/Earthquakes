@@ -1,4 +1,5 @@
 import UIKit
+import MapKit
 
 final class DetailsRouter: Router {
     let navigation: UINavigationController

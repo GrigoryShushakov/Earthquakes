@@ -1,12 +1,14 @@
 import UIKit
 
-class BaseViewController<T>: UIViewController {
+class BaseViewController<T, V: UIView>: UIViewController {
     
     private(set) var viewModel: T
+    var contentView: V { return view as! V }
     
     init(viewModel: T) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.view = V()
         configure()
     }
     
