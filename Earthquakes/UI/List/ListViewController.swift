@@ -68,10 +68,13 @@ final class ListViewController: BaseViewController<ListViewModel, ListView> {
     private func configureDataSource() {
         dataSource = DataSource(tableView: contentView.tableView, cellProvider: { tableView, indexPath, earthquake in
             let cell = tableView.dequeueReusableCell(withIdentifier: EarthquakeTableViewCell.identifier, for: indexPath) as? EarthquakeTableViewCell
-            cell?.idLabel.text = NSLocalizedString("ID: ", comment: "") + earthquake.eqid
-            cell?.magnitudeLabel.text = NSLocalizedString("Magnitude: ", comment: "") + String(earthquake.magnitude)
-            cell?.magnitudeLabel.textColor = earthquake.magnitude > 8.0 ? UIColor.systemRed.withAlphaComponent(0.7) : UIColor.label
-            cell?.dateLabel.text = earthquake.datetime
+            earthquake.fetchCityAndRegion { city, region, error in
+                cell?.cityLabel.text = city ?? "Unknown"
+                cell?.regionLabel.text = region ?? "Unknown"
+            }
+            cell?.imgView.image = UIImage(named: "MapPlaceholder")
+            cell?.magnitudeLabel.text = String(earthquake.magnitude)
+            cell?.magnitudeLabel.textColor = earthquake.magnitude >= 7.0 ? UIColor.systemRed.withAlphaComponent(0.7) : UIColor.label
             return cell
         })
     }

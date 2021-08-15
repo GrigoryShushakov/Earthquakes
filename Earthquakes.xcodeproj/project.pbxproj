@@ -37,6 +37,8 @@
 		D16D568A26B88EF0004B33B6 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D568926B88EF0004B33B6 /* Annotation.swift */; };
 		D16D568C26B93992004B33B6 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D568B26B93992004B33B6 /* ViewModelTests.swift */; };
 		D16D568E26B945DD004B33B6 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D568D26B945DD004B33B6 /* ApiTests.swift */; };
+		D1C1B7B526C3EE0400D7F781 /* CCLocation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7B426C3EE0400D7F781 /* CCLocation+Ext.swift */; };
+		D1C1B7B726C3F66100D7F781 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7B626C3F66100D7F781 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		D16D568B26B93992004B33B6 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		D16D568D26B945DD004B33B6 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
 		D16D569026C1E6A4004B33B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D1C1B7B426C3EE0400D7F781 /* CCLocation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CCLocation+Ext.swift"; sourceTree = "<group>"; };
+		D1C1B7B626C3F66100D7F781 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				D16D561826B5ED4E004B33B6 /* SceneDelegate.swift */,
 				D16D561F26B5ED52004B33B6 /* Assets.xcassets */,
 				D16D562126B5ED52004B33B6 /* LaunchScreen.storyboard */,
+				D1C1B7B426C3EE0400D7F781 /* CCLocation+Ext.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			children = (
 				D16D568826B88EE0004B33B6 /* Annotation */,
 				D16D568626B87C77004B33B6 /* DetailsViewController.swift */,
+				D1C1B7B626C3F66100D7F781 /* DetailsView.swift */,
 				D16D568426B87C46004B33B6 /* DetailsViewModel.swift */,
 			);
 			path = Details;
@@ -387,11 +393,13 @@
 				D16D565E26B5F441004B33B6 /* Assembly.swift in Sources */,
 				D16D561B26B5ED4E004B33B6 /* ListViewController.swift in Sources */,
 				D16D568526B87C46004B33B6 /* DetailsViewModel.swift in Sources */,
+				D1C1B7B726C3F66100D7F781 /* DetailsView.swift in Sources */,
 				D16D564926B5F0EA004B33B6 /* Layout.swift in Sources */,
 				D16D566026B5F4DC004B33B6 /* ListRouter.swift in Sources */,
 				D16D567B26B80AA7004B33B6 /* EarthquakeTableViewCell.swift in Sources */,
 				D16D566626B60174004B33B6 /* NetworkService.swift in Sources */,
 				D16D561726B5ED4E004B33B6 /* AppDelegate.swift in Sources */,
+				D1C1B7B526C3EE0400D7F781 /* CCLocation+Ext.swift in Sources */,
 				D16D568126B87432004B33B6 /* Font.swift in Sources */,
 				D16D568326B87BCC004B33B6 /* DetailsRouter.swift in Sources */,
 				D16D566226B5F55D004B33B6 /* ListViewModel.swift in Sources */,

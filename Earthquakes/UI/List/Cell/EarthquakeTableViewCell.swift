@@ -3,9 +3,11 @@ import UIKit
 final class EarthquakeTableViewCell: UITableViewCell {
     static let identifier = "EarthquakeTableViewCell"
     
-    let idLabel = UILabel()
-    let dateLabel = UILabel()
+    let imgView = UIImageView()
+    let cityLabel = UILabel()
+    let regionLabel = UILabel()
     let magnitudeLabel = UILabel()
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -15,29 +17,39 @@ final class EarthquakeTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private func buildUI() {
-        [dateLabel, idLabel, magnitudeLabel].forEach {
+        [imgView,cityLabel, regionLabel, magnitudeLabel].forEach {
             contentView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.numberOfLines = 0
         }
         NSLayoutConstraint.activate([
-            idLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Layout.spacing),
-            idLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.offset),
-            idLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.offset),
+            imgView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Layout.spacing),
+            imgView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.offset),
+            imgView.widthAnchor.constraint(equalToConstant: Layout.placeholderSize.width),
+            imgView.heightAnchor.constraint(equalToConstant: Layout.placeholderSize.height),
             
-            magnitudeLabel.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: Layout.spacing),
-            magnitudeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.offset),
+            cityLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Layout.spacing),
+            cityLabel.leadingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: Layout.offset),
+            
+            regionLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: Layout.spacing),
+            regionLabel.leadingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: Layout.offset),
+            
+            magnitudeLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            magnitudeLabel.leadingAnchor.constraint(equalTo: cityLabel.trailingAnchor, constant: Layout.offset),
+            magnitudeLabel.leadingAnchor.constraint(equalTo: regionLabel.trailingAnchor, constant: Layout.offset),
             magnitudeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.offset),
             
-            dateLabel.topAnchor.constraint(equalTo: magnitudeLabel.bottomAnchor, constant: Layout.spacing),
-            dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Layout.offset),
-            dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Layout.offset),
-            dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Layout.spacing),
         ])
+        
+        let bottomConstraint = imgView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Layout.spacing)
+        bottomConstraint.priority = .defaultHigh
+        bottomConstraint.isActive = true
+        
         separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         selectionStyle = .none
-        idLabel.font = Font.headline
+        cityLabel.font = Font.headline
+        regionLabel.font = Font.caption
         magnitudeLabel.font = Font.body
-        dateLabel.font = Font.caption
+        magnitudeLabel.setContentHuggingPriority(.required, for: .horizontal)
+        magnitudeLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 }

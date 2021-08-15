@@ -29,6 +29,8 @@ final class ListView: UIView {
         tableView.backgroundColor = UIColor.systemBackground
         tableView.refreshControl = refreshControl
         tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = Layout.placeholderSize.height + Layout.spacing * 2
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     let spinner = UIActivityIndicatorView(style: .large)

@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import CoreLocation
 
 enum ListViewModelState {
     case loading
@@ -23,7 +24,7 @@ final class ListViewModel: EarthquakeService {
     
     func loadList() {
         let receiveValueHandler: (Earthquakes) -> Void = { [weak self] value in
-            self?.earthquakes = value.earthquakes
+            self?.earthquakes = value.earthquakes.sorted { $0.magnitude > $1.magnitude }
             self?.state = .finished
         }
         
