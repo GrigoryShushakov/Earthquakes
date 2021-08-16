@@ -76,7 +76,7 @@ final class ListViewController: BaseViewController<ListViewModel, ListView> {
         })
     }
     
-    private func showError(_ error: NetworkError) {
+    private func showError(_ error: Swift.Error) {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
             self.dismiss(animated: true, completion: nil)

@@ -10,6 +10,4 @@ final class Assembly {
         window: window,
         assembly: self
     )
-    
-    var networkSession: NetworkService = NetworkSession()
 }
