@@ -10,7 +10,7 @@ final class ListRouter: Router {
     }
     
     func run() {
-        let viewModel = ListViewModel(networkSession: assembly.networkSession)
+        let viewModel = ListViewModel()
         let listController = ListViewController(viewModel: viewModel)
         listController.title = NSLocalizedString("Earthquakes", comment: "")
         listController.router = self

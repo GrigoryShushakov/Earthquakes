@@ -22,12 +22,7 @@
 		D16D566026B5F4DC004B33B6 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D565F26B5F4DC004B33B6 /* ListRouter.swift */; };
 		D16D566226B5F55D004B33B6 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D566126B5F55D004B33B6 /* ListViewModel.swift */; };
 		D16D566426B5F8C2004B33B6 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D566326B5F8C2004B33B6 /* ListView.swift */; };
-		D16D566626B60174004B33B6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D566526B60174004B33B6 /* NetworkService.swift */; };
 		D16D566C26B606B4004B33B6 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D16D566B26B606B4004B33B6 /* CombineCocoa */; };
-		D16D566E26B70DC0004B33B6 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D566D26B70DC0004B33B6 /* RequestBuilder.swift */; };
-		D16D567026B72767004B33B6 /* EarthquakeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D566F26B72767004B33B6 /* EarthquakeEndpoint.swift */; };
-		D16D567426B72FFC004B33B6 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D567326B72FFC004B33B6 /* NetworkSession.swift */; };
-		D16D567626B7305E004B33B6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D567526B7305E004B33B6 /* NetworkError.swift */; };
 		D16D567826B73825004B33B6 /* EarthquakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D567726B73825004B33B6 /* EarthquakeService.swift */; };
 		D16D567B26B80AA7004B33B6 /* EarthquakeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D567A26B80AA7004B33B6 /* EarthquakeTableViewCell.swift */; };
 		D16D568126B87432004B33B6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D568026B87432004B33B6 /* Font.swift */; };
@@ -39,6 +34,10 @@
 		D16D568E26B945DD004B33B6 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D568D26B945DD004B33B6 /* ApiTests.swift */; };
 		D1C1B7B526C3EE0400D7F781 /* CCLocation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7B426C3EE0400D7F781 /* CCLocation+Ext.swift */; };
 		D1C1B7B726C3F66100D7F781 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7B626C3F66100D7F781 /* DetailsView.swift */; };
+		D1C1B7BF26CAB12400D7F781 /* NetworkRequest+Earthquakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7BE26CAB12400D7F781 /* NetworkRequest+Earthquakes.swift */; };
+		D1C1B7CE26CAFD3600D7F781 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7CB26CAFD3600D7F781 /* NetworkMethod.swift */; };
+		D1C1B7CF26CAFD3600D7F781 /* URLSession+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7CC26CAFD3600D7F781 /* URLSession+Combine.swift */; };
+		D1C1B7D026CAFD3600D7F781 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1B7CD26CAFD3600D7F781 /* NetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,11 +70,6 @@
 		D16D565F26B5F4DC004B33B6 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
 		D16D566126B5F55D004B33B6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D16D566326B5F8C2004B33B6 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		D16D566526B60174004B33B6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		D16D566D26B70DC0004B33B6 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
-		D16D566F26B72767004B33B6 /* EarthquakeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeEndpoint.swift; sourceTree = "<group>"; };
-		D16D567326B72FFC004B33B6 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
-		D16D567526B7305E004B33B6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D16D567726B73825004B33B6 /* EarthquakeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeService.swift; sourceTree = "<group>"; };
 		D16D567A26B80AA7004B33B6 /* EarthquakeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeTableViewCell.swift; sourceTree = "<group>"; };
 		D16D568026B87432004B33B6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -88,6 +82,10 @@
 		D16D569026C1E6A4004B33B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D1C1B7B426C3EE0400D7F781 /* CCLocation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CCLocation+Ext.swift"; sourceTree = "<group>"; };
 		D1C1B7B626C3F66100D7F781 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		D1C1B7BE26CAB12400D7F781 /* NetworkRequest+Earthquakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkRequest+Earthquakes.swift"; sourceTree = "<group>"; };
+		D1C1B7CB26CAFD3600D7F781 /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		D1C1B7CC26CAFD3600D7F781 /* URLSession+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Combine.swift"; sourceTree = "<group>"; };
+		D1C1B7CD26CAFD3600D7F781 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +114,7 @@
 				D16D561526B5ED4E004B33B6 /* Earthquakes */,
 				D16D562C26B5ED52004B33B6 /* EarthquakesTests */,
 				D16D561426B5ED4E004B33B6 /* Products */,
+				D1C1B7C526CAFAC500D7F781 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,8 +235,9 @@
 		D16D565526B5F399004B33B6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D16D567126B72FCC004B33B6 /* Network */,
+				D1C1B7CA26CAFD2400D7F781 /* NetworkRequest */,
 				D16D567726B73825004B33B6 /* EarthquakeService.swift */,
+				D1C1B7BE26CAB12400D7F781 /* NetworkRequest+Earthquakes.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -249,18 +249,6 @@
 				D16D565926B5F3EB004B33B6 /* Router.swift */,
 			);
 			path = Abstracts;
-			sourceTree = "<group>";
-		};
-		D16D567126B72FCC004B33B6 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				D16D566D26B70DC0004B33B6 /* RequestBuilder.swift */,
-				D16D566F26B72767004B33B6 /* EarthquakeEndpoint.swift */,
-				D16D566526B60174004B33B6 /* NetworkService.swift */,
-				D16D567326B72FFC004B33B6 /* NetworkSession.swift */,
-				D16D567526B7305E004B33B6 /* NetworkError.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		D16D567926B80A88004B33B6 /* Cell */ = {
@@ -277,6 +265,23 @@
 				D16D568926B88EF0004B33B6 /* Annotation.swift */,
 			);
 			path = Annotation;
+			sourceTree = "<group>";
+		};
+		D1C1B7C526CAFAC500D7F781 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1C1B7CA26CAFD2400D7F781 /* NetworkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D1C1B7CB26CAFD3600D7F781 /* NetworkMethod.swift */,
+				D1C1B7CD26CAFD3600D7F781 /* NetworkRequest.swift */,
+				D1C1B7CC26CAFD3600D7F781 /* URLSession+Combine.swift */,
+			);
+			path = NetworkRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,10 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D16D567626B7305E004B33B6 /* NetworkError.swift in Sources */,
 				D16D568726B87C77004B33B6 /* DetailsViewController.swift in Sources */,
-				D16D566E26B70DC0004B33B6 /* RequestBuilder.swift in Sources */,
+				D1C1B7CE26CAFD3600D7F781 /* NetworkMethod.swift in Sources */,
 				D16D565A26B5F3EC004B33B6 /* Router.swift in Sources */,
+				D1C1B7BF26CAB12400D7F781 /* NetworkRequest+Earthquakes.swift in Sources */,
 				D16D566426B5F8C2004B33B6 /* ListView.swift in Sources */,
 				D16D567826B73825004B33B6 /* EarthquakeService.swift in Sources */,
 				D16D565E26B5F441004B33B6 /* Assembly.swift in Sources */,
@@ -397,19 +402,18 @@
 				D16D564926B5F0EA004B33B6 /* Layout.swift in Sources */,
 				D16D566026B5F4DC004B33B6 /* ListRouter.swift in Sources */,
 				D16D567B26B80AA7004B33B6 /* EarthquakeTableViewCell.swift in Sources */,
-				D16D566626B60174004B33B6 /* NetworkService.swift in Sources */,
 				D16D561726B5ED4E004B33B6 /* AppDelegate.swift in Sources */,
 				D1C1B7B526C3EE0400D7F781 /* CCLocation+Ext.swift in Sources */,
 				D16D568126B87432004B33B6 /* Font.swift in Sources */,
 				D16D568326B87BCC004B33B6 /* DetailsRouter.swift in Sources */,
+				D1C1B7D026CAFD3600D7F781 /* NetworkRequest.swift in Sources */,
 				D16D566226B5F55D004B33B6 /* ListViewModel.swift in Sources */,
+				D1C1B7CF26CAFD3600D7F781 /* URLSession+Combine.swift in Sources */,
 				D16D561926B5ED4E004B33B6 /* SceneDelegate.swift in Sources */,
 				D16D564F26B5F23D004B33B6 /* Earthquake.swift in Sources */,
 				D16D565826B5F3D7004B33B6 /* BaseViewController.swift in Sources */,
-				D16D567426B72FFC004B33B6 /* NetworkSession.swift in Sources */,
 				D16D565C26B5F41C004B33B6 /* MainRouter.swift in Sources */,
 				D16D568A26B88EF0004B33B6 /* Annotation.swift in Sources */,
-				D16D567026B72767004B33B6 /* EarthquakeEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

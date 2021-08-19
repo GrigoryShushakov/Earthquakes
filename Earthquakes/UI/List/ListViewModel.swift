@@ -5,11 +5,10 @@ import CoreLocation
 enum ListViewModelState {
     case loading
     case finished
-    case error(NetworkError)
+    case error(Swift.Error)
 }
 
 final class ListViewModel: EarthquakeService {
-    var networkSession: NetworkService
     private var cancellables = Set<AnyCancellable>()
     
     enum Section { case quakes }
@@ -17,8 +16,7 @@ final class ListViewModel: EarthquakeService {
     @Published var earthquakes = [Earthquake]()
     @Published var state: ListViewModelState = .loading
 
-    init(networkSession: NetworkService) {
-        self.networkSession = networkSession
+    init() {
         loadList()
     }
     
@@ -28,7 +26,7 @@ final class ListViewModel: EarthquakeService {
             self?.state = .finished
         }
         
-        let receiveCompletionHandler: (Subscribers.Completion<NetworkError>) -> Void = { [weak self] completion in
+        let receiveCompletionHandler: (Subscribers.Completion<Swift.Error>) -> Void = { [weak self] completion in
             switch completion {
             case .failure(let error):
                 self?.state = .error(error)
