@@ -8,10 +8,8 @@ final class DetailsViewController: BaseViewController<DetailsViewModel, DetailsV
         
         contentView.magnitudeLabel.text = String(viewModel.earthquake.magnitude)
         contentView.magnitudeLabel.textColor = viewModel.earthquake.magnitude >= 7.0 ? UIColor.systemRed.withAlphaComponent(0.7) : UIColor.label
-        viewModel.earthquake.fetchCityAndRegion { [weak self] city, region, error in
-            self?.contentView.cityLabel.text = city ?? "Unknown"
-            self?.contentView.regionLabel.text = region ?? "Unknown"
-        }
+        contentView.cityLabel.text = viewModel.earthquake.city ?? "Unknown"
+        contentView.regionLabel.text = viewModel.earthquake.region ?? "Unknown"
         contentView.severityLabel.text = viewModel.earthquake.magnitude >= 7.0 ? "This is severe Earthquake" : ""
         
         let coordinate = CLLocationCoordinate2D(latitude: viewModel.earthquake.lat, longitude: viewModel.earthquake.lng)

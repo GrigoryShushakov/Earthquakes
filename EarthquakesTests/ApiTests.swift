@@ -25,9 +25,4 @@ class ApiTests: XCTestCase {
     }
 }
 
-class ServiceMock: EarthquakeService {
-    var networkSession: NetworkService
-    init() {
-        self.networkSession = NetworkSession()
-    }
-}
+class ServiceMock: EarthquakeService { }

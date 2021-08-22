@@ -21,8 +21,8 @@ final class ListViewModel: EarthquakeService {
     }
     
     func loadList() {
-        let receiveValueHandler: (Earthquakes) -> Void = { [weak self] value in
-            self?.earthquakes = value.earthquakes.sorted { $0.magnitude > $1.magnitude }
+        let receiveValueHandler: ([Earthquake]) -> Void = { [weak self] value in
+            self?.earthquakes = value.sorted { $0.magnitude > $1.magnitude }
             self?.state = .finished
         }
         
@@ -35,7 +35,18 @@ final class ListViewModel: EarthquakeService {
             }
         }
         
+        func resolveGeo(_ earthquakes: [Earthquake]) -> AnyPublisher<[Earthquake], Swift.Error> {
+            Publishers.MergeMany(earthquakes.map { quake -> AnyPublisher<Earthquake, Swift.Error> in
+                return CLGeocoder().reverseGeocodeLocationPublisher(quake)
+            })
+            .collect()
+            .eraseToAnyPublisher()
+        }
+        
         earthquakeList()
+            .flatMap { value -> AnyPublisher<[Earthquake], Swift.Error> in
+                return resolveGeo(value.earthquakes)
+            }
             .sink(receiveCompletion: receiveCompletionHandler, receiveValue: receiveValueHandler)
             .store(in: &cancellables)
     }
