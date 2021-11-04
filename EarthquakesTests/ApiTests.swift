@@ -8,7 +8,7 @@ class ApiTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Download quakes")
         var cancellables = Set<AnyCancellable>()
         let service = ServiceMock()
-        service.earthquakeList().sink { completion in
+        service.earthquakeList(.aboveTwoWithHalf, .week).sink { completion in
             switch completion {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
