@@ -68,11 +68,11 @@ final class ListViewController: BaseViewController<ListViewModel, ListView> {
     private func configureDataSource() {
         dataSource = DataSource(tableView: contentView.tableView, cellProvider: { tableView, indexPath, earthquake in
             let cell = tableView.dequeueReusableCell(withIdentifier: EarthquakeTableViewCell.identifier, for: indexPath) as? EarthquakeTableViewCell
-            cell?.cityLabel.text = earthquake.city ?? "Unknown"
-            cell?.regionLabel.text = earthquake.region ?? "Unknown"
+            cell?.cityLabel.text = earthquake.properties.place
+            cell?.regionLabel.text = self.timestampFormatter.string(from: Date(timeIntervalSince1970: earthquake.properties.time/1000.0))
             cell?.imgView.image = UIImage(named: "MapPlaceholder")
-            cell?.magnitudeLabel.text = String(earthquake.magnitude)
-            cell?.magnitudeLabel.textColor = earthquake.magnitude >= 7.0 ? UIColor.systemRed.withAlphaComponent(0.7) : UIColor.label
+            cell?.magnitudeLabel.text = String(earthquake.properties.mag)
+            cell?.magnitudeLabel.textColor = earthquake.properties.mag >= 7.0 ? UIColor.systemRed.withAlphaComponent(0.7) : UIColor.label
             return cell
         })
     }
@@ -85,4 +85,13 @@ final class ListViewController: BaseViewController<ListViewModel, ListView> {
         alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    private let timestampFormatter: DateFormatter = {
+        let timestampFormatter = DateFormatter()
+
+        timestampFormatter.dateStyle = .medium
+        timestampFormatter.timeStyle = .medium
+
+        return timestampFormatter
+    }()
 }

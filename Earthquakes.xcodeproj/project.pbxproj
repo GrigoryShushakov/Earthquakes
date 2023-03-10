@@ -107,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1652DE026D30A6D007852F1 /* ReverseGeocode */ = {
+			isa = PBXGroup;
+			children = (
+				D1C1B7B426C3EE0400D7F781 /* CCGeocoder+Ext.swift */,
+			);
+			path = ReverseGeocode;
+			sourceTree = "<group>";
+		};
 		D16D560A26B5ED4E004B33B6 = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +169,6 @@
 				D16D561826B5ED4E004B33B6 /* SceneDelegate.swift */,
 				D16D561F26B5ED52004B33B6 /* Assets.xcassets */,
 				D16D562126B5ED52004B33B6 /* LaunchScreen.storyboard */,
-				D1C1B7B426C3EE0400D7F781 /* CCGeocoder+Ext.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 		D16D565526B5F399004B33B6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D1652DE026D30A6D007852F1 /* ReverseGeocode */,
 				D1C1B7CA26CAFD2400D7F781 /* NetworkRequest */,
 				D16D567726B73825004B33B6 /* EarthquakeService.swift */,
 				D1C1B7BE26CAB12400D7F781 /* NetworkRequest+Earthquakes.swift */,

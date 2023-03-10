@@ -4,13 +4,8 @@ import XCTest
 class UrlBuilderTests: XCTestCase {
 
     func testUrlBuilder() throws {
-        let request: NetworkRequest<Earthquakes> = .list(formatted: true,
-                                                         north: 44.1,
-                                                         south: -209.9,
-                                                         east: -22.4,
-                                                         west: 55.2,
-                                                         username: "mkoppelman")
+        let request: NetworkRequest<Earthquakes> = .list(magnitude: .aboveTwoWithHalf, period: .week)
         let url = try XCTUnwrap(request.urlRequest.url)
-        XCTAssertEqual(url.absoluteString, "http://api.geonames.org/earthquakesJSON?formatted=true&north=44.1&south=-209.9&east=-22.4&west=55.2&username=mkoppelman")
+        XCTAssertEqual(url.absoluteString, "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson?")
     }
 }
