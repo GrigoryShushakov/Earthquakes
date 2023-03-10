@@ -58,3 +58,5 @@ Pods/
 # Carthage/Checkouts
 
 Carthage/Build/
+Earthquakes/.DS_Store
+.DS_Store
