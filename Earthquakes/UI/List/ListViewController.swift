@@ -16,27 +16,23 @@ final class ListViewController: BaseViewController<ListViewModel, ListView> {
         setupTableView()
         configureDataSource()
         setupBindings()
+        viewModel.loadList()
     }
     
     private func setupBindings() {
         
-        viewModel.$earthquakes
-            .dropFirst()
-            .sink { [weak self] quakes in
-                self?.updateUI(quakes)
-            }
-            .store(in: &cancellables)
-        
         viewModel.$state
             .sink { [weak self] state in
                 switch state {
-                case .loading: self?.contentView.spinner.startAnimating()
-                case .finished: self?.contentView.spinner.stopAnimating()
+                case .loading:
+                    self?.contentView.spinner.startAnimating()
+                case .finished(let earthquakes):
+                    self?.endRefreshing()
+                    self?.updateUI(earthquakes)
                 case .error(let error):
-                    self?.contentView.spinner.stopAnimating()
+                    self?.endRefreshing()
                     self?.showError(error)
                 }
-                self?.contentView.refreshControl.endRefreshing()
             }
             .store(in: &cancellables)
         
@@ -48,8 +44,8 @@ final class ListViewController: BaseViewController<ListViewModel, ListView> {
         
         contentView.tableView.didSelectRowPublisher
             .sink { [weak self] indexPath in
-                guard let quake = self?.viewModel.earthquakes[indexPath.row] else { return }
-                self?.router?.quakeDetails(quake)
+                guard case .finished(let earthquakes) = self?.viewModel.state else { return }
+                self?.router?.quakeDetails(earthquakes[indexPath.row])
             }
             .store(in: &cancellables)
     }
@@ -94,4 +90,9 @@ final class ListViewController: BaseViewController<ListViewModel, ListView> {
 
         return timestampFormatter
     }()
+    
+    private func endRefreshing() {
+        self.contentView.spinner.stopAnimating()
+        self.contentView.refreshControl.endRefreshing()
+    }
 }
